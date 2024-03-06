@@ -1021,6 +1021,9 @@ refactor_rootfs() {
         sed -e "s/macaddr=.*/macaddr=${random_macaddr}:07/" "brcmfmac4354-sdio.txt" >"brcmfmac4354-sdio.amlogic,sm1.txt"
         # ct2000 s922x is brm4359
         sed -i "s/macaddr=.*/macaddr=${random_macaddr}:08/" "brcmfmac4359-sdio.ali,ct2000.txt"
+        mkdir  ../cypress       
+        cp brcmfmac4339-sdio.bin ../cypress/cyfmac4339-sdio.bin
+        cp brcmfmac4339-sdio.txt ../cypress/cyfmac4339-sdio.txt
     )
 
     # Add custom Armbian information
