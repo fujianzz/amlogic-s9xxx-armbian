@@ -1021,12 +1021,12 @@ refactor_rootfs() {
         sed -e "s/macaddr=.*/macaddr=${random_macaddr}:07/" "brcmfmac4354-sdio.txt" >"brcmfmac4354-sdio.amlogic,sm1.txt"
         # ct2000 s922x is brm4359
         sed -i "s/macaddr=.*/macaddr=${random_macaddr}:08/" "brcmfmac4359-sdio.ali,ct2000.txt"
-        pwd
-        mkdir  /home/runner/work/_actions/fujianzz/amlogic-s9xxx-armbian/main/tmp_dir/tmp_build/rootfs/usr/lib/firmware/cypress     
-        ls  ${tag_rootfs}  
+         cd ${tag_rootfs}
+         mkdir -p lib/firmware/cypress
         
-        cp brcmfmac4339-sdio.bin ../cypress/cyfmac4339-sdio.bin
-        cp brcmfmac4339-sdio.txt ../cypress/cyfmac4339-sdio.txt
+        
+        cp lib/firmware/brcm/brcmfmac4339-sdio.bin lib/firmware/cypress/cyfmac4339-sdio.bin
+        cp lib/firmware/brcm/brcmfmac4339-sdio.txt lib/firmware/cypress/cyfmac4339-sdio.txt
         ls  ${tag_rootfs}/usr/lib/firmware/cypress
     )
 
