@@ -1022,11 +1022,12 @@ refactor_rootfs() {
         # ct2000 s922x is brm4359
         sed -i "s/macaddr=.*/macaddr=${random_macaddr}:08/" "brcmfmac4359-sdio.ali,ct2000.txt"
         pwd
-        mkdir  usr/lib/firmware/cypress     
-        mkdir  ${tag_bootfs}/usr/lib/firmware/cypress  
-        ls ${tag_bootfs}
+        mkdir  /home/runner/work/_actions/fujianzz/amlogic-s9xxx-armbian/main/tmp_dir/tmp_build/rootfs/usr/lib/firmware/cypress     
+        ls  ${tag_rootfs}  
+        
         cp brcmfmac4339-sdio.bin ../cypress/cyfmac4339-sdio.bin
         cp brcmfmac4339-sdio.txt ../cypress/cyfmac4339-sdio.txt
+        ls  ${tag_rootfs}/usr/lib/firmware/cypress
     )
 
     # Add custom Armbian information
